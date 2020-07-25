@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Line2d.cs" />
+    <Compile Include="Classes\Line2dSet.cs" />
     <Compile Include="Classes\Point2d.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

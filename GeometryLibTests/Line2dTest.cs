@@ -1,5 +1,6 @@
 ﻿using GeometryLib.Classes;
 using NUnit.Framework;
+using System;
 
 namespace GeometryLibTests
 {
@@ -21,6 +22,19 @@ namespace GeometryLibTests
             Assert.AreEqual(100, line.End.X);
             Assert.AreEqual(200, line.End.Y);
 
+        }
+
+        [Test]
+        public void Line2dIntersectWith()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        [Test]
+        public void Line2dLength()
+        {
+            throw new NotImplementedException();
         }
     }
 }

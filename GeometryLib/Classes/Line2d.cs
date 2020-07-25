@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace GeometryLib.Classes
 {
@@ -15,13 +15,22 @@ namespace GeometryLib.Classes
         public Point2d Start
         {
             get { return _start; }
-            set { _start = value; }
+            set
+            {
+                _start = value;
+                CalculateAngle();
+            }
         }
 
         public Point2d End
         {
             get { return _end; }
-            set { _end = value; }
+            set
+            {
+                _end = value;
+                CalculateAngle();
+            }
+
         }
 
         public Line2d()
@@ -33,11 +42,21 @@ namespace GeometryLib.Classes
             _start = start;
             _end = end;
         }
-    }
 
-    public class LineSet
-    {
-        private Dictionary<int, Line2d> _lines;
+        public Point2d IntersectWith(Line2d line)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double Length()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CalculateAngle()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

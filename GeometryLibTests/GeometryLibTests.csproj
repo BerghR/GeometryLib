@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Line2dSetTest.cs" />
     <Compile Include="Line2dTest.cs" />
     <Compile Include="Point2dTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
