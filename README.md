@@ -1,10 +1,10 @@
 # GeometryLib
 
-##A C# Geometry Library
+## A C# Geometry Library
 
 This is a brand new project and a such not much information is available at this time.
 
-##Sort term goal
+## Sort term goal
 
 1. Two lines intersection point (actual or projected )
 2. Multiple lines intersections (actual only)
