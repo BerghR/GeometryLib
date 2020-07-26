@@ -6,7 +6,7 @@ This is a brand new project and a such not much information is available at this
 
 ## Sort term goals
 
-~~1. Two lines intersection point (actual or projected )~~ Completed
+1. ~~Two lines intersection point (actual or projected )~~ Completed.
 2. Multiple lines intersections (actual only)
 3. Polygon detection from multiple lines
 4. Point in Polygon detection
