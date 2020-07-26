@@ -12,6 +12,6 @@ This is a brand new project and a such not much information is available at this
 4. Point in Polygon detection
 5. Sortes path from intersection point to another intersection point by (Vertices or Length)
 6. Polygon Triangulation
-~~7. Point on line check~~ Completed
+7. ~~Point on line check~~ Completed
 8. Add a Tolerance functionality
 
