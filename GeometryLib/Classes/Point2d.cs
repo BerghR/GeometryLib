@@ -11,7 +11,6 @@
             set { _y = value; }
         }
 
-
         public double X
         {
             get { return _x; }

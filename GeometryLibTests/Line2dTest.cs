@@ -8,7 +8,6 @@ namespace GeometryLibTests
     [TestFixture]
     class Line2dTest
     {
-
         [Test]
         public void Line2dCreation()
         {
@@ -104,6 +103,20 @@ namespace GeometryLibTests
             angle = line7.Angle;
 
             Assert.AreEqual(180, angle);
+
+        }
+
+
+        [Test]
+        public void IsPointOnLine()
+        {
+            var line1 = new Line2d(new Point2d(0, 0), new Point2d(100, 100));
+            var result = line1.IsPointOnLine(new Point2d(50, 50));
+            Assert.True(result);
+
+            var result2 = line1.IsPointOnLine(new Point2d(120, 120));
+
+            Assert.False(result2);
 
         }
     }

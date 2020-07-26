@@ -75,28 +75,15 @@ namespace GeometryLib.Classes
 
                 if (actual)
                 {
-                    if (
-                       !((Start.X <= intersection.X && intersection.X <= End.X) &&
-                        (Start.Y <= intersection.Y && intersection.Y <= End.Y)
-                        ||
-                        (End.X <= intersection.X && intersection.X <= Start.X) &&
-                        (End.Y <= intersection.Y && intersection.Y <= Start.Y)))
+                    if (!IsPointOnLine(intersection))
                     {
                         intersection.X = double.NaN;
                         intersection.Y = double.NaN;
                     }
-
-
                 }
-
                 return intersection;
             }
 
-        }
-
-        public bool IsOnLine(Point2d point)
-        {
-            throw new NotImplementedException();
         }
 
         public double Length()
@@ -118,6 +105,31 @@ namespace GeometryLib.Classes
                 _angle = (inRadians * 360 / (2 * Math.PI));
 
             }
+        }
+
+        public bool IsPointOnLine(Point2d point)
+        {
+            //y = ax + b
+            double a = (_start.Y - _end.Y) / (_start.X = _end.X);
+            double b = _start.Y - (a * _start.X);
+
+            var resultY = a * point.X + b;
+
+            if (
+                resultY == point.Y &&
+                !((Start.X <= point.X && point.X <= End.X) &&
+                  (Start.Y <= point.Y && point.Y <= End.Y)
+                  ||
+                  (End.X <= point.X && point.X <= Start.X) &&
+                  (End.Y <= point.Y && point.Y <= Start.Y))
+                )
+            {
+                return true;
+
+            }
+
+            return false;
+
         }
 
     }

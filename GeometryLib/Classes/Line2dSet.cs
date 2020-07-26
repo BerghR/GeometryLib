@@ -27,14 +27,11 @@ namespace GeometryLib.Classes
 
         public void Remove(Line2d line)
         {
-
             if (_lines.Contains(line))
             {
                 _lines.Remove(line);
                 _lineCount--;
-
             }
-
         }
 
         public void RemoveAt(int index)
@@ -49,8 +46,5 @@ namespace GeometryLib.Classes
                 _lineCount--;
             }
         }
-
-
-
     }
 }
