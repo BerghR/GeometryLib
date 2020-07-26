@@ -25,7 +25,7 @@ namespace GeometryLibTests
         }
 
         [Test]
-        public void Line2dIntersectWith()
+        public void Line2dIntersectActual()
         {
             var line1 = new Line2d(new Point2d(0, 0), new Point2d(100, 100));
             var line2 = new Line2d(new Point2d(0, 100), new Point2d(100, 0));
@@ -36,6 +36,22 @@ namespace GeometryLibTests
             Assert.AreEqual(50, intersectionPoint.Y);
         }
 
+        [Test]
+        public void Line2dIntersectProjected()
+        {
+            var line1 = new Line2d(new Point2d(0, 0), new Point2d(49, 49));
+            var line2 = new Line2d(new Point2d(0, 100), new Point2d(100, 0));
+
+            var intersectionPoint = line1.IntersectWith(line2, false);
+
+            Assert.AreEqual(50, intersectionPoint.X);
+            Assert.AreEqual(50, intersectionPoint.Y);
+
+            intersectionPoint = line1.IntersectWith(line2, true);
+
+            Assert.AreEqual(double.NaN, intersectionPoint.X);
+            Assert.AreEqual(double.NaN, intersectionPoint.Y);
+        }
 
         [Test]
         public void Line2dLength()
