@@ -106,7 +106,6 @@ namespace GeometryLibTests
 
         }
 
-
         [Test]
         public void IsPointOnLine()
         {
