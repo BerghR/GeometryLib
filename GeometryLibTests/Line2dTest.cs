@@ -27,14 +27,68 @@ namespace GeometryLibTests
         [Test]
         public void Line2dIntersectWith()
         {
-            throw new NotImplementedException();
+            var line1 = new Line2d(new Point2d(0, 0), new Point2d(100, 100));
+            var line2 = new Line2d(new Point2d(0, 100), new Point2d(100, 0));
+
+            var intersectionPoint = line1.IntersectWith(line2);
+
+            Assert.AreEqual(50, intersectionPoint.X);
+            Assert.AreEqual(50, intersectionPoint.Y);
         }
 
 
         [Test]
         public void Line2dLength()
         {
-            throw new NotImplementedException();
+            var line1 = new Line2d(new Point2d(0, 0), new Point2d(0, 100));
+            var line2 = new Line2d(new Point2d(0, 0), new Point2d(100, 100));
+
+            double line1Length = line1.Length();
+            double line2Length = line2.Length();
+
+            Assert.AreEqual(100, line1Length);
+            Assert.AreEqual(141.42135623, Math.Truncate(100000000 * line2Length) / 100000000);
+
+        }
+
+        [Test]
+        public void AngleOfLine()
+        {
+            var line1 = new Line2d(new Point2d(0, 0), new Point2d(100, 0));
+            var angle = line1.Angle;
+
+            Assert.AreEqual(90, angle);
+
+            var line2 = new Line2d(new Point2d(0, 0), new Point2d(100, 100));
+            angle = line2.Angle;
+
+            Assert.AreEqual(45, angle);
+
+            var line3 = new Line2d(new Point2d(0, 0), new Point2d(0, 100));
+            angle = line3.Angle;
+
+            Assert.AreEqual(0, angle);
+
+            var line4 = new Line2d(new Point2d(0, 0), new Point2d(-100, 100));
+            angle = line4.Angle;
+
+            Assert.AreEqual(315, angle);
+
+            var line5 = new Line2d(new Point2d(0, 0), new Point2d(-100, 0));
+            angle = line5.Angle;
+
+            Assert.AreEqual(270, angle);
+
+            var line6 = new Line2d(new Point2d(0, 0), new Point2d(-100, -100));
+            angle = line6.Angle;
+
+            Assert.AreEqual(225, angle);
+
+            var line7 = new Line2d(new Point2d(0, 0), new Point2d(0, -100));
+            angle = line7.Angle;
+
+            Assert.AreEqual(180, angle);
+
         }
     }
 }
